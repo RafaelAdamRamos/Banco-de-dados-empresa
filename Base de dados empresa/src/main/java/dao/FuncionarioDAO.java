@@ -126,4 +126,20 @@ public class FuncionarioDAO {
             return false;
         }
     }
+
+    //Gera uma matricula automaticamente no modelo F(número de três dígitos) ex: F001
+    public String gerarProximaMatricula() {
+        String sql = "SELECT MAX(CAST(SUBSTRING(matricula, 2) AS UNSIGNED)) AS max_num FROM funcionario";
+        try (Statement stmt = conexao.createStatement()) {
+            ResultSet rs = stmt.executeQuery(sql);
+            if (rs.next()) {
+                int ultimoNumero = rs.getInt("max_num");
+                int proximo = ultimoNumero + 1;
+                return String.format("F%03d", proximo);
+            }
+        } catch (SQLException e) {
+            System.out.println("Erro ao gerar matrícula: " + e.getMessage());
+        }
+        return "F001"; // Caso não haja nenhum funcionário ainda
+    }
 }

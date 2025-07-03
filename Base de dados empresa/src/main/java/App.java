@@ -20,44 +20,45 @@ public class App {
         FuncionarioDAO funcionarioDAO = new FuncionarioDAO(conn);
         ProjetoDAO projetoDAO = new ProjetoDAO(conn);
 
-        // ========== EXEMPLO 1: Cadastrar pessoa ==========
+        //Cadastrar pessoa
         Pessoa p = new Pessoa();
-        p.setNome("João da Silva");
-        p.setEmail("joao@email.com");
-        pessoaDAO.inserir(p); // Pessoa será inserida
+        p.setNome("João da Silva"); // Inserir info
+        p.setEmail("joao@email.com"); // Inserir info
+        pessoaDAO.inserir(p);
 
-        // ========== EXEMPLO 2: Cadastrar funcionário ==========
+        //Cadastrar funcionário
         Funcionario f = new Funcionario();
-        f.setId(p.getId()); // Agora pega o ID certo
-        f.setMatricula("F001");
-        f.setDepartamento("TI");
+        f.setId(p.getId());
+        f.setMatricula(funcionarioDAO.gerarProximaMatricula()); //Matrícula é gerada automaticamente no modelo F(número de três dígitos) ex: F001
+        f.setDepartamento("TI"); // Inserir info
         funcionarioDAO.inserir(f);
 
-        // ========== EXEMPLO 3: Cadastrar projeto ==========
+        //Cadastrar projeto
         Projeto proj = new Projeto();
-        proj.setNome("Sistema Interno");
-        proj.setDescricao("Desenvolvimento do novo sistema da empresa.");
-        proj.setIdFuncionario(13); // id_pessoa do João, agora funcionário
+        proj.setNome("Sistema Interno"); // Inserir info
+        proj.setDescricao("Desenvolvimento do novo sistema da empresa."); // Inserir info
+        proj.setIdFuncionario(f.getId());
         projetoDAO.inserir(proj);
 
-        // ========== EXEMPLO 4: Listar pessoas ==========
+        // Listar pessoas
         System.out.println("\nPESSOAS:");
         List<Pessoa> pessoas = pessoaDAO.listarTodos();
         for (Pessoa pessoa : pessoas) {
             System.out.println(pessoa.getId() + " - " + pessoa.getNome() + " - " + pessoa.getEmail());
         }
 
-        // ========== EXEMPLO 5: Listar funcionários ==========
+        //Listar funcionários
         System.out.println("\nFUNCIONÁRIOS:");
         List<Funcionario> funcionarios = funcionarioDAO.listarTodos();
         for (Funcionario func : funcionarios) {
             System.out.println(func.getId() + " - " + func.getMatricula() + " - " + func.getDepartamento());
         }
 
-        // ========== EXEMPLO 6: Listar projetos ==========
+        //Listar projetos
         System.out.println("\nPROJETOS:");
         List<Projeto> projetos = projetoDAO.listarTodos();
         for (Projeto projeto : projetos) {
             System.out.println(projeto.getId() + " - " + projeto.getNome() + " - " + projeto.getDescricao());
         }
-    }}
+    }
+}
