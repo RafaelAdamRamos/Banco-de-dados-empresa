@@ -1,58 +1,56 @@
-# Banco de Dados Empresa
+# Company Database
 
-> 🔧 **Projeto aprimorável**  
-> Este projeto apresenta uma estrutura de banco de dados relacional para uma empresa e pode ser expandido ou aprimorado conforme novos requisitos, estudos ou integrações com aplicações.
+> 🔧 **Extensible Project**  
+> This project presents a relational database structure for a company and can be expanded or improved according to new requirements, studies, or application integrations.
 
-## Descrição
+## Description
 
-Este repositório contém um **projeto em Java** com foco em **persistência de dados**, utilizando um banco de dados relacional para representar a estrutura de uma empresa.
+This repository contains a **Java project** focused on **data persistence**, using a relational database to represent a company's structure.
 
-O projeto foi desenvolvido como base para estudo de **CRUD**, modelagem de dados e integração entre Java e banco de dados, podendo ser expandido com novas funcionalidades, regras de negócio ou interfaces.
+The project was developed as a base for studying **CRUD**, data modeling, and integration between Java and databases, and can be expanded with new features, business rules, or interfaces.
 
+## Database Structure
 
-## Estrutura do Banco de Dados
+The main tables in this database include:
 
-As principais tabelas deste banco de dados incluem:
+- **EMPLOYEE** – employee records with attributes such as name, CPF, salary, and relationships with projects and supervisors.
+- **DEPARTMENT** – company departments with manager and start dates.
+- **DEPARTMENT_LOCATION** – department locations.
+- **PROJECT** – projects with name, number, and related department.
+- **WORKS_ON** – associative table between employees and projects.
+- **DEPENDENT** – employee dependents.
 
-- **FUNCIONARIO** – registro de funcionários com atributos como nome, CPF, salário e relacionamentos com projetos e supervisores.
-- **DEPARTAMENTO** – departamentos da empresa com gerente e datas de início.
-- **LOCALIZACAO_DEP** – localização de departamentos.
-- **PROJETO** – projetos com nome, número e departamento relacionado.
-- **TRABALHA_EM** – tabela associativa entre funcionários e projetos.
-- **DEPENDENTE** – dependentes de funcionários.
+*(The tables are defined in the `banco.sql` file.)*
 
-*(As tabelas são definidas no arquivo `banco.sql`.)*
+## Files
 
-## Arquivos
+- `banco.sql` – contains the SQL commands for creating the tables and database structure.
 
-- `banco.sql` – contém os comandos SQL para criação das tabelas e estrutura do banco.
-
-## Tecnologias Utilizadas
+## Technologies Used
 - Java
 - SQL
-- Banco de dados relacional
-- JDBC (ou acesso direto ao banco)
+- Relational database
+- JDBC (or direct database access)
 
-## Como usar
+## How to use
 
-1. **Importar o script SQL**  
-   - Abra seu SGBD (MySQL, PostgreSQL etc.)  
-   - Crie um banco de dados (por exemplo `empresa`)  
-   - Execute o conteúdo do arquivo `banco.sql` para criar as tabelas  
+1. **Import the SQL script**  
+   - Open your DBMS (MySQL, PostgreSQL, etc.)  
+   - Create a database (for example `empresa`)  
+   - Execute the contents of the `banco.sql` file to create the tables  
 
-2. **Conectar com sua aplicação**  
-   - Use JDBC ou ORM (por exemplo Hibernate) na sua aplicação Java  
-   - Ajuste a configuração de conexão (URL, usuário, senha) conforme necessário
+2. **Connect with your application**  
+   - Use JDBC or an ORM (for example Hibernate) in your Java application  
+   - Adjust the connection configuration (URL, user, password) as needed
 
-## Requisitos
+## Requirements
 
-- Servidor de banco de dados relacional (MySQL, PostgreSQL ou outro compatível)
-- Ferramenta para executar scripts SQL (Workbench, DBeaver, PgAdmin etc.)
-- Se for conectar com código Java: JDK instalado e driver JDBC configurado
+- Relational database server (MySQL, PostgreSQL, or another compatible one)
+- Tool to execute SQL scripts (Workbench, DBeaver, PgAdmin, etc.)
+- If connecting with Java code: JDK installed and JDBC driver configured
 
-## Observações
+## Notes
 
-- Projeto voltado a **estudo de modelagem de banco de dados** e exemplos de estrutura relacional  
-- Pode ser expandido com dados de exemplo, relacionamentos adicionais, views, índices, etc.
-- Está em constante evolução conforme novos requisitos ou aplicações são integrados
-
+- Project focused on **database modeling studies** and examples of relational structure  
+- Can be expanded with sample data, additional relationships, views, indexes, etc.
+- It is constantly evolving as new requirements or applications are integrated
