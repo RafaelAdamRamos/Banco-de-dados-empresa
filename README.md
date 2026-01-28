@@ -5,8 +5,10 @@
 
 ## Descrição
 
-Este repositório contém um exemplo de **modelo de banco de dados relacional** para uma empresa, com tabelas como `FUNCIONARIO`, `DEPARTAMENTO`, `PROJETO`, `DEPENDENTE`, entre outras, estruturado para permitir operações básicas e servir como base para aplicações que façam CRUD.  
-Ele pode ser usado como referência de estrutura de dados ou inicialização de bases de teste para projetos em Java, SQL ou outras linguagens que se conectem a banco de dados.
+Este repositório contém um **projeto em Java** com foco em **persistência de dados**, utilizando um banco de dados relacional para representar a estrutura de uma empresa.
+
+O projeto foi desenvolvido como base para estudo de **CRUD**, modelagem de dados e integração entre Java e banco de dados, podendo ser expandido com novas funcionalidades, regras de negócio ou interfaces.
+
 
 ## Estrutura do Banco de Dados
 
@@ -26,10 +28,10 @@ As principais tabelas deste banco de dados incluem:
 - `banco.sql` – contém os comandos SQL para criação das tabelas e estrutura do banco.
 
 ## Tecnologias Utilizadas
-
-Este projeto envolve principalmente:
-- **SQL** para modelagem de banco de dados relacional
-- Pode ser integrado com aplicações em **Java** ou outras linguagens que se conectem a banco de dados usando JDBC ou bibliotecas similares
+- Java
+- SQL
+- Banco de dados relacional
+- JDBC (ou acesso direto ao banco)
 
 ## Como usar
 
