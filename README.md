@@ -5,7 +5,7 @@
 
 ## Descrição
 
-Este repositório contém um exemplo de **modelo de banco de dados relacional** para uma empresa, com tabelas como `FUNCIONARIO`, `DEPARTAMENTO`, `PROJETO`, `DEPENDENTE`, entre outras — estruturado para permitir operações básicas e servir como base para aplicações que façam CRUD.  
+Este repositório contém um exemplo de **modelo de banco de dados relacional** para uma empresa, com tabelas como `FUNCIONARIO`, `DEPARTAMENTO`, `PROJETO`, `DEPENDENTE`, entre outras, estruturado para permitir operações básicas e servir como base para aplicações que façam CRUD.  
 Ele pode ser usado como referência de estrutura de dados ou inicialização de bases de teste para projetos em Java, SQL ou outras linguagens que se conectem a banco de dados.
 
 ## Estrutura do Banco de Dados
